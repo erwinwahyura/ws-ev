@@ -1,19 +1,15 @@
 const WebSocket = require('ws')
-const url = 'ws://localhost:3003'
-// const url = 'ws://13.250.50.66:8080'
+const url = 'ws://localhost:3003'  // || env
 const ws = new WebSocket(url)
 
-ws.addEventListener('open', () => {
+ws.onopen = () => {
   ws.send('client connecting...')
-})
+}
 
-ws.addEventListener('error', error => {
+ws.onerror = error => {
   console.log('WebScoket error: ', error)
-})
+}
 
-ws.addEventListener('message', msg => {
+ws.onmessage = msg => {
   console.log('message: ', msg.data)
-  ws.addEventListener('apaya', m => {
-    console.log(m, 'naon')
-  })
-})
+}

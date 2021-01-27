@@ -9,12 +9,6 @@ wss.on('connection', function conn(ws) {
   })
   
   ws.send('Hello From Server')
-  // ws.on('apaya', function test(msg) {
-  //   console.log(msg, 'apaya')
-  // })
-  // wss.addListener('apaya', m => {
-  //   console.log('apaya : ', m)
-  // })
 })
 
 server.listen(3003, () => {
