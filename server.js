@@ -1,5 +1,5 @@
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 8080 })
+const wss = new WebSocket.Server({ port: 3003 })
 
 wss.on('connection', function conn(ws) {
   ws.on('message', function incoming(msg) {
