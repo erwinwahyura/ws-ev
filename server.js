@@ -6,9 +6,9 @@ const wss = new WebSocket.Server({ server })
 wss.on('connection', function conn(ws) {
   ws.on('message', function incoming(msg) {
     console.log('received: %s', msg)
-    ws.send('Hello From Server', msg)
   })
-
+  
+  ws.send('Hello From Server')
   // ws.on('apaya', function test(msg) {
   //   console.log(msg, 'apaya')
   // })
@@ -16,7 +16,6 @@ wss.on('connection', function conn(ws) {
   //   console.log('apaya : ', m)
   // })
 })
-
 
 server.listen(3003, () => {
   console.log('listening to port 3003')
